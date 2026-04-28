@@ -205,7 +205,6 @@
     position: relative;
 }
 
-/* Assegna altezze specifiche ai contenitori delle foto per mantenere la griglia ordinata */
 .main-img {
     height: 400px;
 }
@@ -219,11 +218,10 @@
 .img-fluida {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Taglia l'immagine in eccesso ma riempie sempre il contenitore */
+    object-fit: cover;
     display: block;
 }
 
-/* --- LAYOUT GENERALE (CSS GRID) --- */
 .main-grid {
     padding: 20px;
     max-width: 1200px;
@@ -233,7 +231,7 @@
     gap: 30px;
 }
 
-/* --- STILI TESTI ARTICOLI --- */
+
 .imm-sovrapposte {
     position: relative;
     margin-bottom: 15px;
@@ -269,7 +267,6 @@
     border: 1px solid #ddd;
 }
 
-/* La linea divisoria copre tutta la larghezza (tutte le colonne) */
 .linea-divis {
     grid-column: 1;
     grid-row: auto; /*vediamo se funziona*/
@@ -279,7 +276,7 @@
     width: 100%;
 }
 
-/* --- GRIGLIA NOTIZIE SECONDARIE (GRID NIDIFICATA) --- */
+
 .seco {
     grid-column: 1; /* Occupa tutta la larghezza */
     display: grid;
@@ -340,6 +337,7 @@
     display: block;
     margin: 0 auto;
 }
+
 .search-wrapper{
     position: static;
     display: flex;
@@ -383,7 +381,6 @@
 }
 .search-input{
     width: 60%;
-    /*flex-grow: 1;*/
     border: 3px solid black;
     border-radius: 50px;
     padding: 15px 25px;
@@ -411,55 +408,87 @@
     grid-column: 1;
     margin-bottom: 40px;
 }*/
-/* --- RESPONSIVE DESIGN (MOBILE) --- */
 
-/*.footer-line {
-    grid-column: 1 / -1;
-    border-top: 4px solid black;
-    margin-top: 40px;
-}
 .site-footer{
     grid-column: 1 / -1;
-    background-color: #f9f9f9;
-    padding: 40px 0;
-    font-family: 'Arial', sans-serif;
-    color: black;
+    background-color: #ffffff;
+    margin-top: 50px;
+    width: 100%;
+    position: relative;
+    /*z-index: 10;*/
+    /*padding: 40px 0;
+    color: black;*/
 }
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+.footer-red-line {
+    height: 6px;
+    background-color: #bc091e;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px 40px 20px;
+}
+.footer-logo.title-3D-solido {
+    position: relative;
+    left: 0;
+    justify-content:flex-start;
     margin-bottom: 40px;
+    font-size: 38px;
 }
-.footer-column h4{
-    font-size : 16px;
-    font-weight: bold;
-    color: black;
-    margin-bottom: 15px;
+.footer-columns {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+}
+.footer-col {
+    flex: 1;
+    min-width: 0;
+}
+.footer-col:first-child {
+    flex: 1.5;
+    min-width: 200px;
+}
+.footer-col h4 {
+    color: #000000;
+    font-weight:bold;
+    font-size: 13px;
+    margin-bottom: 12px;
     text-transform: uppercase;
-    border-bottom: 1px solid #cccccc;
-    padding-bottom: 5px;
-    display: inline-block;
+    letter-spacing: 1px;
 }
-.footer-column ul{
+.black-sub {
+    margin-top: 20px;
+}
+.footer-col ul {
     list-style: none;
+    padding:0;
 }
-.footer-column ul li{
-    margin-bottom: 10px;
+.footer-col ul li {
+    color: #555555;
+    font-size: 13px;
+    margin-bottom: 6px;
 }
-.footer-column ul li a{
-    text-align: center;
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
+.doppia-colonna{
+    display: flex;
+    gap: 20px;
 }
 .footer-bottom {
-    text-align: center;
-    border-top: 1px solid #ddd;
+    margin-top: 40px;
+    border-top: 1px solid #cccccc;
     padding-top: 20px;
-    font-size: 14px;
+    text-align: center;
+}
+.footer-bottom p {
+    font-size: 11px;
+    font-weight: bold;
     color: black;
-}*/
+}
 @media (max-width: 768px) {
     .black-nav {
         flex-direction: column; /* Impila gli elementi verticalmente */
@@ -498,6 +527,7 @@
         display:flex;
         flex-direction: column;
         gap: 20px;
+        height: auto; /*aggiunta ora*/
     }
     .mini-trending-bar{ /*ok*/
         display: none;
@@ -547,4 +577,22 @@
         border-bottom: 1px solid #eeeeee;
         padding-bottom: 15px;
     }
+    .footer-columns {
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap:30px;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .footer-logo.title-3D-solido {
+        font-size: 28px;
+        text-shadow: -4px 4px 0 #000000;
+    }
+    /*.footer-cointainer {
+        padding: 0 20px 40px 20px
+    }
+    .footer-col {
+        width: 100%;
+    }*/
 }
