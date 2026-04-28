@@ -73,7 +73,7 @@
     align-items: stretch; /*center*/
     padding: 10px 0 20px 0;
     margin-bottom: 20px;
-    border-bottom: 1px solid #cccccc;
+    border-bottom: 2px solid black;
 }
 .trending-item {
     display: grid;
@@ -111,8 +111,8 @@
     word-wrap: break-word;
 }
 .trending-item.middle-item {
-    border-left: 2px solid #cccccc;
-    border-right: 2px solid #cccccc;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
     /* padding: 0 30px;*/
 }
 /*fine aggiunta*/
@@ -408,7 +408,38 @@
     grid-column: 1;
     margin-bottom: 40px;
 }*/
-
+.special-layout {
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin: 40px 0;
+    margin-bottom: 20px;
+}
+.big-news{
+    padding-right: 10px;
+    border-right: 1px solid #cccccc;
+}
+.side-news-stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.side-item {
+    padding-bottom: 15px;
+}
+.side-item:first-child {
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 15px;
+}
+.side-item .small-img{
+    height: 180px;
+}
+.side-item h3 {
+    font-size: 16px;
+    margin-top: 8px;
+    line-height: 1.2;
+}
 .site-footer{
     grid-column: 1 / -1;
     background-color: #ffffff;
@@ -570,10 +601,37 @@
         order: 6;
     }
     .ad-horizontal{
-        order: 7;
+        order: 8;
     }
     .sidebar {
-        order: 8;
+        order: 9;
+    }
+    .special-layout {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        order: 7;
+        gap: 20px;
+        align-items: start;
+    }
+    .side.news-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .side-item {
+        padding: 0;
+        margin: 0;
+    }
+    .side-item:first-child{
+        border-bottom: 1px solid #cccccc;
+        padding-bottom: 20px;
+        border-right: none;
+    }
+    .side-item:last-child{
+        margin-top: 0;
+    }
+    .side-item .small-img {
+        height: 200px;
     }
 
     .article1-item,.article-item {
@@ -585,7 +643,7 @@
         width: 100%;
     }
     .img-container.small-img {
-        width: 120px;
+        width: 200px;
         height: 100px;
         flex-shrink:0;
         overflow: hidden;
