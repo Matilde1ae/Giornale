@@ -78,7 +78,7 @@
 .trending-item {
     display: grid;
     /*flex-direction: row;*/
-    grid-template-columns: 60px 1fr;
+    grid-template-columns: 80px 1fr;
     /*flex-wrap: nowrap;*/
     align-items: center;
     gap: 15px;
@@ -86,7 +86,7 @@
     padding: 0 20px;
 }
 .trending-item img{
-    width: 70px;
+    width: 80px;
     height: 60px;
     /*min-width: 45px;*/
     object-fit: cover;
@@ -221,7 +221,7 @@
     grid-column: 1;
     grid-row: 2; /*vediamo se funziona*/
 }
-/* --- SOLUZIONE IMMAGINI FLUIDE --- */
+
 .img-container {
     width: 100%; /* Il contenitore prende tutto lo spazio disponibile */
     overflow: hidden;
@@ -231,8 +231,13 @@
 .main-img {
     height: 400px;
 }
+/* CONTROLLA*/
 .ad-img {
-    height: 250px;
+    /*height: 300px;*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 .small-img {
     height: 120px;
@@ -247,13 +252,12 @@
 
 .main-grid {
     padding: 20px;
-    max-width: 1200px;
+    max-width: 1100px; /*1200*/
     margin: 0 auto;
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 30px;
 }
-
 
 .imm-sovrapposte {
     position: relative;
@@ -278,24 +282,24 @@
 }
 
 .bold-a {
-    /*font-weight: bold;*/
     margin-bottom: 10px;
 }
 
 .sidebar {
     grid-column: 2;
-    grid-row: 2 /20;
+    grid-row: 2 /30;
     background-color: #f9f9f9;
     padding: 15px;
     border: 1px solid #ddd;
+    height: 100%
 }
 
 .linea-divis {
     grid-column: 1;
     grid-row: auto; /*vediamo se funziona*/
     border: none;
-    border-top: 1px solid #cccccc;
-    margin: 10px 0;
+    border-top: 2px solid #cccccc;
+    margin: 5px 0;
     width: 100%;
 }
 
@@ -350,7 +354,7 @@
     border-bottom: 1px solid #ddd;
 }
 .ad-horizontal p{
-    font-size: 10px;
+    font-size: 11px;
     color: #555555;
     margin-bottom: 5px;
 }
@@ -431,7 +435,9 @@
     grid-column: 1;
     margin-bottom: 40px;
 }*/
+
 .special-layout {
+    align-items: start;
     grid-column: 1;
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -444,34 +450,339 @@
     border-right: 1px solid #cccccc;
 }
 .side-news-stack {
+    gap: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex: 1;
 }
 .side-item {
     padding-bottom: 15px;
 }
 .side-item:first-child {
     border-bottom: 1px solid #cccccc;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 .side-item .small-img{
-    height: 180px;
+   /* height: 180px;*/
+    width: 100%;
+    flex-grow: 1;
+    object-fit: cover;
+    min-height:240px;
 }
 .side-item h3 {
     font-size: 16px;
     margin-top: 8px;
     line-height: 1.2;
 }
+
+
+.opinion-divider {
+    grid-column: 1; /* Fondamentale: la tiene nella colonna di sinistra accanto alla sidebar */
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 30px 0 15px 0;
+}
+
+.opinion-divider .linea-nera {
+    flex-grow: 1;
+    height: 3px; /* Leggermente più sottile per eleganza */
+    background-color: #000000;
+}
+
+.opinion-box {
+    background-color: white;
+    color: #bc091e; /* Rosso del tuo progetto */
+    font-weight: bold;
+    font-size: 14px;
+    padding: 6px 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 2px solid black;
+}
+
+.special-layout-inverted {
+    display: grid;
+    border-right: none;
+    align-items: start;
+    grid-column: 1;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    margin: 40px 0;
+    margin-bottom: 20px;
+}
+
+.side-news-stack {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    border-right: 1px solid #cccccc;
+    padding-right: 5px;
+}
+.big-news-stack {
+    border-bottom: 1px solid #cccccc;
+}
+
+.podcast-divider {
+    grid-column: 1; /* Resta a sinistra della sidebar */
+    display: flex;
+    align-items: center;
+    margin: 40px 0 20px 0;
+}
+
+.podcast-divider .linea-nera {
+    flex-grow: 1;
+    height: 4px; /* Spessore riga */
+    background-color: #000000;
+}
+
+.podcast-box {
+    background-color: white; /* Quadrato nero */
+    color: #bc091e;           /* Rosso grassetto */
+    font-weight: 900;
+    font-size: 16px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0; /* Si collega direttamente alle linee */
+    border: 2px solid black;
+}
+
+
+.news-divider {
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    margin: 40px 0 1px 0;
+}
+
+.news-divider .linea-nera {
+    flex-grow: 1;
+    height: 3px;
+    background-color: #000000;
+}
+
+.news-box {
+    background-color: white; /* Quadrato nero */
+    color: #bc091e;
+    font-weight: 900;
+    font-size: 16px;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 2px solid black;
+}
+
+.special-layout-inverted {
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.side-news-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-right: 20px;
+    border-right: 1px solid #000; /* Riga verticale tra piccole e grande */
+}
+
+.big-news {
+    padding-left: 20px;
+}
+
+
+.tripla-sezione-notizie {
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px; /* Questo crea lo SPAZIO tra le linee nere */
+    margin-top: 40px;
+}
+
+.colonna-notizie {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.segmento-nero {
+    height: 5px;
+    background-color: #000;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.categoria-rossa {
+    color: #bc091e;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.img-medio-piccola {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.notizia-principale {
+    font-weight: 800;
+    font-size: 19px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.notizia-secondaria {
+    font-size: 14px;
+    color: #444;
+    padding: 10px 0;
+    font-weight: 500;
+}
+
+.riga-grigia {
+    border: 0;
+    border-top: 1px solid #e0e0e0;
+    margin: 0;
+}
+.exclusive-news-tag {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.exclusive-news-tag .badge {
+    background-color: #bc091e;
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    display: inline-block;
+    letter-spacing: 1px;
+    border-radius: 0;
+}
+
+.news-divider {
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    margin: 40px 0 20px 0;
+}
+
+.news-divider .linea-nera {
+    flex-grow: 1;
+    height: 4px;
+    background-color: #000000;
+}
+
+.news-box {
+    background-color: white; /* Quadrato nero */
+    color: #bc091e;           /* Scritta rossa */
+    font-weight: 900;
+    font-size: 16px;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* --- LOGICA LAYOUT INVERTITO CON RIGA VERTICALE --- */
+.special-layout-inverted {
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0; /* Gap zero per far toccare la riga ai padding */
+    margin-bottom: 40px;
+}
+
+.side-news-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-right: 20px;
+    border-right: 1px solid #000; /* Riga verticale tra piccole e grande */
+}
+
+.big-news {
+    padding-left: 20px;
+}
+
+.tripla-sezione-notizie {
+    grid-column: 1; /* Rimane a sinistra della Sidebar */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonne uguali */
+    gap: 30px; /* Crea lo spazio che "spezza" le righe nere */
+    margin-top: 40px;
+}
+
+.colonna-notizie {
+    display: flex;
+    flex-direction: column;
+}
+
+/* LA RIGA NERA SPEZZETTATA */
+.segmento-nero {
+    height: 5px;
+    background-color: #000;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.categoria-rossa {
+    color: #bc091e;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 15px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.img-medio-piccola {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.notizia-principale {
+    font-weight: 800;
+    font-size: 19px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.notizia-secondaria {
+    font-size: 14px;
+    color: #444;
+    padding: 10px 0;
+    font-weight: 500;
+}
+
+.riga-grigia {
+    border: 0;
+    border-top: 1px solid #e0e0e0;
+    margin: 0;
+}
+
+
+.h-1 {
+    display: none;
+}
+
+
 .site-footer{
     grid-column: 1 / -1;
     background-color: #ffffff;
     margin-top: 50px;
     width: 100%;
     position: relative;
-    /*z-index: 10;*/
-    /*padding: 40px 0;
-    color: black;*/
 }
 .footer-red-line {
     height: 6px;
@@ -545,6 +856,13 @@
     font-weight: bold;
     color: black;
 }
+
+
+
+
+/* Correzione per la visualizzazione mobile */
+
+
 @media (max-width: 768px) {
     .top-red-bar {
         padding: 6px;
@@ -629,7 +947,8 @@
         order: 8;
     }
     .sidebar {
-        order: 9;
+        /*order: 9;*/
+        display: none;
     }
     .special-layout {
         display: grid;
@@ -694,15 +1013,6 @@
         margin: 0;
         color: #555555;
     }
-    /*.news-section{
-        order: 3;
-    }
-    .seco {
-        order: 4;
-    }*/
-    /*.ad-horizontal{
-        order: 5;
-    }*/
     .linea-divis {
         display: none;
     }
@@ -736,7 +1046,7 @@
     .footer-logo.title-3D-solido {
         justify-content: center;
         font-size: 28px;
-        text-shadow: -4px 4px 0 #000000;
+        text-shadow: -1px 1px 0 #aaaaaa, -2px 2px 0 #aaaaaa;
     }
     .footer-cointainer {
         /*padding: 0 20px 40px 20px*/
@@ -749,4 +1059,55 @@
         border-bottom: 1px solid #cccccc;
         padding-bottom: 15px;
     }
+    .opinion-divider {
+        margin: 20px 0 10px 0;
+        order: 9;
+    }
+    .opinion-box {
+        font-size: 12px;
+        padding: 4px 10px;
+        order:10;
+    }
+    .seco-3 {
+        order: 11;
+    }
+    .special-layout-inverted {
+        order: 12;
+        grid-template-columns: 1fr 1.5fr; /*aggiustami*/
+    }
+    .podcast-divider {
+        margin: 20px 0 10px 0;
+        order: 13
+    }
+    .podcast-box {
+        font-size: 12px;
+        padding: 4px 10px;
+        order: 14;
+    }
+    .seco-4 {
+        order: 15;
+    }
+    .news-divider {
+        margin: 20px 0 10px 0;
+        order: 16;
+    }
+    .sl {
+        order:17;
+    }
+    .ts-1 {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        order: 18;
+    }
+
+    .ts-2 {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        order:19;
+    }
+    .h-1 {
+        display:grid;
+        order: 20;
+    }
+
 }
