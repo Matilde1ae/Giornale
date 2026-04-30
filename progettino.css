@@ -924,7 +924,8 @@
     }
 
     .nav-links {
-        background-color: white;
+        background-color: #ffffff;
+        color: #000000;
         width: 100%;
         justify-content: center;
         padding: 10px 15px; /*10 15*/
@@ -937,11 +938,13 @@
     }
 
     .nav-links a {
-        color: black;
-        border-right: 2px solid black;
+        color: #000000;
+        /*border-right: 2px solid #000000;*/
         line-height: 1.2;
         display: block;
         padding: 0 14px;
+        font-size: 18px;
+        font-weight: 800;
     }
     .nav-links a:last-child {
         border-right: none;
@@ -1166,9 +1169,6 @@
     .ipsum-sidebar-box { /*25-5*/
         order:5
     }
-
-
-
 }
 @media (max-width: 576px) {
     .main-grid {
